@@ -6,24 +6,65 @@ body {
 	font-size: max(2.5vmin, 14pt);
 }
 
+.scene {
+	/* Center the div */
+	margin: 100px auto;
+	width: min(80%, 800px);
+	height: 450px;
+}
+
 .card {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	position: relative;
+	transform-style: preserve-3d;
+	transform-origin: top center;
+	transition: transform 0.3s;
+}
+
+.card.is-flipped {
+	transform: translateY(100%) rotateX(-180deg);
+}
+
+.face {
 	/* Draw the physical card */
 	border-style: solid;
 	border-color: #74c7ec;
 	border-radius: 15px;
-	width: min(80%, 800px);
-
-	/* Center the div */
-	margin: 100px auto;
+	backface-visibility: hidden;
 
 	/* Fix the position of the content */
+	position: absolute;
+	width: 100%;
+	height: 100%;
 	padding: 10px;
 
 	/* Misc fancy */
-	box-shadow: 0 0 120px 20px #313244, 20px 20px 15px black;
+	box-shadow: 0 0 90px 10px #313244, 20px 20px 15px black;
 }
 
-.profile-picture > img {
+.card-front p {
+	margin-top: 40px;
+	text-align: center;
+	font: small-caps bold 40px Noto Sans;
+}
+
+.card-front .clicks {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.card-front img {
+	width: 16%;
+}
+
+.card-back {
+	background-color: #1e1e2e;
+	transform: rotateX(180deg);
+}
+
+.card-back > img {
 	border-radius: 25%;
 	width: 140px;
 
@@ -35,22 +76,22 @@ body {
 	float: left;
 }
 
-.card > p {
+.card-back p {
 	/* Uninherit padding from .card */
 	padding: 0;
 }
 
 /* Frosted glass effect */
-.card:hover {
+.card-back:hover {
 	background-color: #313244;
 	transition: 0.3s;
 }
-.card:hover :is(img, span) {
+.card-back:hover :is(img, span) {
 	filter: blur(2px);
 	transition: 0.3s;
 }
 
-.card :is(img, span):hover {
+.card-back :is(img, span):hover {
 	filter: blur(0px);
 	transition: 0.3s;
 }
