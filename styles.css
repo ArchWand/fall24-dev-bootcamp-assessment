@@ -1,3 +1,30 @@
-/* Your Styles Here */
-body{
+body {
+	/* Catppuccin Mocha color theme: https://github.com/catppuccin/catppuccin */
+	background-color: #1e1e2e;
+	color: #cdd6f4;
+	font-size: 26px;
 }
+
+.card {
+	width: 1000px;
+
+	/* Center the div */
+	margin: 100px auto;
+
+	padding: 10px;
+	border-style: solid;
+	border-color: #74c7ec;
+}
+
+.profile-picture > img {
+	border-radius: 25%;
+	width: 130px;
+    float: left;
+	padding-top: 20px;
+	padding-right: 20px;
+}
+
+.card > p {
+	padding: 0;
+}
+
