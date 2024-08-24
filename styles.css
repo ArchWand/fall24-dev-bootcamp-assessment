@@ -2,29 +2,53 @@ body {
 	/* Catppuccin Mocha color theme: https://github.com/catppuccin/catppuccin */
 	background-color: #1e1e2e;
 	color: #cdd6f4;
+	font-family: 'Noto Sans';
 	font-size: 26px;
 }
 
 .card {
+	/* Draw the physical card */
+	border-style: solid;
+	border-color: #74c7ec;
+	border-radius: 15px;
 	width: 1000px;
 
 	/* Center the div */
 	margin: 100px auto;
 
+	/* Fix the position of the content */
 	padding: 10px;
-	border-style: solid;
-	border-color: #74c7ec;
+
+	/* Misc fancy */
+	box-shadow: 0 0 120px 20px #313244, 20px 20px 15px black;
 }
 
 .profile-picture > img {
 	border-radius: 25%;
 	width: 130px;
+
+	/* Positioning */
+	margin-top: 20px;
+	margin-right: 20px;
+
+	/* Wrap text */
     float: left;
-	padding-top: 20px;
-	padding-right: 20px;
 }
 
 .card > p {
+	/* Uninherit padding from .card */
 	padding: 0;
+}
+
+/* Frosted glass effect */
+.card:hover {
+	background-color: #313244;
+}
+.card:hover :is(img, span) {
+	filter: blur(2px);
+}
+
+.card :is(img, span):hover {
+	filter: blur(0px);
 }
 
