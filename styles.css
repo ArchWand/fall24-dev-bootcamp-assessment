@@ -2,8 +2,8 @@ body {
 	/* Catppuccin Mocha color theme: https://github.com/catppuccin/catppuccin */
 	background-color: #1e1e2e;
 	color: #cdd6f4;
-	font-family: 'Noto Sans';
-	font-size: 26px;
+	font-family: 'Noto Sans Medium';
+	font-size: max(2.5vmin, 14pt);
 }
 
 .card {
@@ -11,7 +11,7 @@ body {
 	border-style: solid;
 	border-color: #74c7ec;
 	border-radius: 15px;
-	width: 1000px;
+	width: min(80%, 800px);
 
 	/* Center the div */
 	margin: 100px auto;
@@ -25,14 +25,14 @@ body {
 
 .profile-picture > img {
 	border-radius: 25%;
-	width: 130px;
+	width: 140px;
 
 	/* Positioning */
 	margin-top: 20px;
 	margin-right: 20px;
 
 	/* Wrap text */
-    float: left;
+	float: left;
 }
 
 .card > p {
@@ -43,12 +43,15 @@ body {
 /* Frosted glass effect */
 .card:hover {
 	background-color: #313244;
+	transition: 0.3s;
 }
 .card:hover :is(img, span) {
 	filter: blur(2px);
+	transition: 0.3s;
 }
 
 .card :is(img, span):hover {
 	filter: blur(0px);
+	transition: 0.3s;
 }
 
